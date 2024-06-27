@@ -18,6 +18,7 @@ var localReleaseVersion = "0.0.0-local";
 var releaseVersion = GetSettingValue("releaseVersion", localReleaseVersion);
 var fork = GetSettingValue("fork", "git@github.com:mongodb/libmongocrypt.git");
 var branch = GetSettingValue("branch", "master");
+var alpineDirectory = MakeAbsolute(Directory(GetSettingValue("alpineDir", "./")));
 
 // 1.10.0 - latest libmongocrypt release
 var libmongocryptAllUrl = GetSettingValue("url", "https://mciuploads.s3.amazonaws.com/libmongocrypt/all/1.10.0/libmongocrypt-all.tar.gz");
@@ -68,9 +69,12 @@ Task("Prepare")
         CopyFile(
             libmongocryptAllDirectory.Combine("windows-test").Combine("bin").CombineWithFilePath("mongocrypt.dll"),
             downloadedMongocryptDirectory.CombineWithFilePath("mongocrypt.dll"));
+//         CopyFile(
+//             libmongocryptAllDirectory.Combine("ubuntu1804-64").Combine("nocrypto").Combine("lib").CombineWithFilePath("libmongocrypt.so"),
+//             downloadedMongocryptDirectory.CombineWithFilePath("libmongocrypt.so"));
         CopyFile(
-            libmongocryptAllDirectory.Combine("ubuntu1804-64").Combine("nocrypto").Combine("lib").CombineWithFilePath("libmongocrypt.so"),
-            downloadedMongocryptDirectory.CombineWithFilePath("libmongocrypt.so"));
+             alpineDirectory.Combine("libmongocrypt").Combine("nocrypto").Combine("lib").CombineWithFilePath("libmongocrypt.so"),
+             downloadedMongocryptDirectory.CombineWithFilePath("libmongocrypt.so"));
         CopyFile(
             libmongocryptAllDirectory.Combine("macos").Combine("lib").CombineWithFilePath("libmongocrypt.dylib"),
             downloadedMongocryptDirectory.CombineWithFilePath("libmongocrypt.dylib"));

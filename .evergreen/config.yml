@@ -1120,6 +1120,7 @@ buildvariants:
   - build-and-test-asan
   - build-and-test-node
   - build-and-publish-node
+  - build-and-test-csharp
   - test-java
   - name: publish-packages
     distros:
@@ -1203,6 +1204,7 @@ buildvariants:
   - build-and-test-and-upload
   - build-and-test-shared-bson
   - build-and-test-node
+  - build-and-test-csharp
   - test-java
   - name: publish-packages
     distros:
@@ -1278,6 +1280,7 @@ buildvariants:
   - build-and-test-shared-bson
   - build-and-test-asan
   - build-and-test-node
+  - build-and-test-csharp
   - test-java
   - name: publish-packages
     distros:
@@ -1292,6 +1295,7 @@ buildvariants:
     python: python3
   tasks:
   - build-and-test-and-upload
+  - build-and-test-csharp
   - name: publish-packages
     distros:
     - ubuntu2004-small
@@ -1307,6 +1311,7 @@ buildvariants:
   - build-and-test-shared-bson
   - build-and-test-asan
   - build-and-test-node
+  - build-and-test-csharp
   - test-java
   - name: publish-packages
     distros:
@@ -1354,6 +1359,7 @@ buildvariants:
   - build-and-test-and-upload
   - build-and-test-shared-bson
   - build-and-test-node
+  - build-and-test-csharp
   - test-java
   - name: publish-packages
     distros:
@@ -1383,6 +1389,7 @@ buildvariants:
   - build-and-test-and-upload
   - build-and-test-shared-bson
   - build-and-test-node
+  - build-and-test-csharp
   - test-java
   - test-python
   - name: publish-packages
