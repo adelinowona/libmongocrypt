@@ -11,7 +11,7 @@ var configuration = Argument("configuration", "Release");
 
 var gitVersion = GitVersion();
 
-var alpineDirectory = MakeAbsolute(Directory("./libmongocrypt"));
+var alpineDirectory = MakeAbsolute(Directory("./libmongocrypt_2"));
 var buildDirectory = MakeAbsolute(Directory(GetSettingValue("buildDirectory", "c:\\build")));
 var libmongocryptAllDirectory=buildDirectory.Combine("libmongocrypt-all");
 var downloadedMongocryptDirectory=buildDirectory.Combine("downloadedMongocryptDirectory");
