@@ -11,7 +11,6 @@ var configuration = Argument("configuration", "Release");
 
 var gitVersion = GitVersion();
 
-var alpineDirectory = MakeAbsolute(Directory("./libmongocrypt_2"));
 var buildDirectory = MakeAbsolute(Directory(GetSettingValue("buildDirectory", "c:\\build")));
 var libmongocryptAllDirectory=buildDirectory.Combine("libmongocrypt-all");
 var downloadedMongocryptDirectory=buildDirectory.Combine("downloadedMongocryptDirectory");
@@ -69,14 +68,9 @@ Task("Prepare")
         CopyFile(
             libmongocryptAllDirectory.Combine("windows-test").Combine("bin").CombineWithFilePath("mongocrypt.dll"),
             downloadedMongocryptDirectory.CombineWithFilePath("mongocrypt.dll"));
-//         CopyFile(
-//             libmongocryptAllDirectory.Combine("ubuntu2204-arm64").Combine("nocrypto").Combine("lib").CombineWithFilePath("libmongocrypt.so"),
-//             downloadedMongocryptDirectory.CombineWithFilePath("libmongocrypt.so"));
-            
         CopyFile(
-            alpineDirectory.Combine("nocrypto").Combine("lib").CombineWithFilePath("libmongocrypt.so"),
-            downloadedMongocryptDirectory.CombineWithFilePath("libmongocrypt.so"));
-            
+            libmongocryptAllDirectory.Combine("ubuntu1804-arm64").Combine("nocrypto").Combine("lib").CombineWithFilePath("libmongocrypt.so"),
+            downloadedMongocryptDirectory.CombineWithFilePath("libmongocrypt.so"));          
         CopyFile(
             libmongocryptAllDirectory.Combine("macos").Combine("lib").CombineWithFilePath("libmongocrypt.dylib"),
             downloadedMongocryptDirectory.CombineWithFilePath("libmongocrypt.dylib"));
