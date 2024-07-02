@@ -69,7 +69,7 @@ Task("Prepare")
             libmongocryptAllDirectory.Combine("windows-test").Combine("bin").CombineWithFilePath("mongocrypt.dll"),
             downloadedMongocryptDirectory.CombineWithFilePath("mongocrypt.dll"));
         CopyFile(
-            libmongocryptAllDirectory.Combine("debian12").Combine("nocrypto").Combine("lib").CombineWithFilePath("libmongocrypt.so"),
+            libmongocryptAllDirectory.Combine("ubuntu2204-arm64").Combine("nocrypto").Combine("lib").CombineWithFilePath("libmongocrypt.so"),
             downloadedMongocryptDirectory.CombineWithFilePath("libmongocrypt.so"));
         CopyFile(
             libmongocryptAllDirectory.Combine("macos").Combine("lib").CombineWithFilePath("libmongocrypt.dylib"),
