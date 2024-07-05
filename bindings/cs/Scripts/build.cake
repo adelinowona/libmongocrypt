@@ -64,7 +64,9 @@ Task("Prepare")
         Information("Done git clone..");
 
         EnsureDirectoryExists(libmongocryptRelWithDebInfoDirectory);
-        EnsureDirectoryExists(downloadedMongocryptDirectory);
+        EnsureDirectoryExists(downloadedMongocryptDirectory.Combine("linux").Combine("x64"));
+        EnsureDirectoryExists(downloadedMongocryptDirectory.Combine("linux").Combine("arm64"));
+        EnsureDirectoryExists(downloadedMongocryptDirectory.Combine("linux").Combine("alpine").Combine("arm64"));
         CopyFile(
             libmongocryptAllDirectory.Combine("windows-test").Combine("bin").CombineWithFilePath("mongocrypt.dll"),
             downloadedMongocryptDirectory.CombineWithFilePath("mongocrypt.dll"));
