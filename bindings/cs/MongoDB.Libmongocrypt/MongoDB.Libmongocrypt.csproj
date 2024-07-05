@@ -31,20 +31,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-<!--    <Content Include="$(LibMongoCryptBinaries)/linux/x64/libmongocrypt.so" Condition="Exists('$(LibMongoCryptBinaries)/linux/x64/libmongocrypt.so')">-->
-<!--      <Link>libmongocrypt.so</Link>-->
-<!--      <CopyToOutputDirectory>Always</CopyToOutputDirectory>-->
-<!--    </Content>-->
+    <Content Include="$(LibMongoCryptBinaries)/linux/x64/libmongocrypt.so" Condition="Exists('$(LibMongoCryptBinaries)/linux/x64/libmongocrypt.so')">
+      <Link>linux/x64/libmongocrypt.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
 
-<!--    <Content Include="$(LibMongoCryptBinaries)/linux/arm64/libmongocrypt.so" Condition="Exists('$(LibMongoCryptBinaries)/linux/arm64/libmongocrypt.so')">-->
-<!--      <Link>libmongocrypt.so</Link>-->
-<!--      <CopyToOutputDirectory>Always</CopyToOutputDirectory>-->
-<!--    </Content>-->
-
-<!--    <Content Include="$(LibMongoCryptBinaries)/linux/alpine/arm64/libmongocrypt.so" Condition="Exists('$(LibMongoCryptBinaries)/linux/alpine/arm64/libmongocrypt.so')">-->
-<!--      <Link>libmongocrypt.so</Link>-->
-<!--      <CopyToOutputDirectory>Always</CopyToOutputDirectory>-->
-<!--    </Content>-->
+    <Content Include="$(LibMongoCryptBinaries)/linux/arm64/libmongocrypt.so" Condition="Exists('$(LibMongoCryptBinaries)/linux/arm64/libmongocrypt.so')">
+      <Link>linux/arm64/libmongocrypt.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
 
     <Content Include="$(LibMongoCryptBinaries)/libmongocrypt.dylib" Condition="Exists('$(LibMongoCryptBinaries)/libmongocrypt.dylib')">
       <Link>libmongocrypt.dylib</Link>
@@ -73,17 +68,13 @@
       <Pack>true</Pack>
       <PackagePath>runtimes/win/native</PackagePath>
     </Content>
-    <Content Include="$(LibMongoCryptBinaries)/linux/x64/libmongocrypt.so" Condition="Exists('$(LibMongoCryptBinaries)/linux/x64/libmongocrypt.so')">
+    <Content Include="$(LibMongoCryptBinaries)/linux/x64/libmongocrypt.so">
       <Pack>true</Pack>
       <PackagePath>runtimes/linux-x64/native</PackagePath>
     </Content>
-    <Content Include="$(LibMongoCryptBinaries)/linux/arm64/libmongocrypt.so" Condition="Exists('$(LibMongoCryptBinaries)/linux/arm64/libmongocrypt.so')">
+    <Content Include="$(LibMongoCryptBinaries)/linux/arm64/libmongocrypt.so">
       <Pack>true</Pack>
       <PackagePath>runtimes/linux-arm64/native</PackagePath>
-    </Content>
-    <Content Include="$(LibMongoCryptBinaries)/linux/alpine/arm64/libmongocrypt.so" Condition="Exists('$(LibMongoCryptBinaries)/linux/alpine/arm64/libmongocrypt.so')">
-      <Pack>true</Pack>
-      <PackagePath>runtimes/linux-alpine-arm64/native</PackagePath>
     </Content>
     <Content Include="$(LibMongoCryptBinaries)/libmongocrypt.dylib">
       <Pack>true</Pack>

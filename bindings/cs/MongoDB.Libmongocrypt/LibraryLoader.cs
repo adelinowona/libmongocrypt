@@ -185,8 +185,8 @@ namespace MongoDB.Libmongocrypt
             
             private static readonly string[] __suffixPaths = 
             {
-                "../../runtimes/linux/native/",
-                "runtimes/linux/native/",
+                $"../../runtimes/linux/native/{RuntimeInformation.OSArchitecture}",
+                $"runtimes/linux/native/{RuntimeInformation.OSArchitecture}",
                 string.Empty
             };
 

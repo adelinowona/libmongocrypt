@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <IsLinuxX64 Condition="$([MSBuild]::IsOsPlatform('Linux')) And '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'X64'">true</IsLinuxX64>
+    <IsLinuxArm64 Condition="$([MSBuild]::IsOsPlatform('Linux')) And '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'Arm64'">true</IsLinuxArm64>
+  </PropertyGroup>
+  
   <ItemGroup Condition="$([MSBuild]::IsOsPlatform('Windows'))">
     <Content Include="$(MSBuildThisFileDirectory)../runtimes/win/native/mongocrypt.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Link>mongocrypt.dll</Link>
     </Content>
   </ItemGroup>
-  <ItemGroup Condition="$([MSBuild]::IsOsPlatform('Linux'))">
+  <ItemGroup Condition="$(IsLinuxX64) == true">
     <Content Include="$(MSBuildThisFileDirectory)../runtimes/linux-x64/native/libmongocrypt.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>libmongocrypt.so</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="$(IsLinuxArm64) == true">
+    <Content Include="$(MSBuildThisFileDirectory)../runtimes/linux-arm64/native/libmongocrypt.so">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Link>libmongocrypt.so</Link>
     </Content>
