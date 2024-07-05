@@ -7,7 +7,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup Condition="$([MSBuild]::IsOsPlatform('Linux'))">
-    <Content Include="$(MSBuildThisFileDirectory)../runtimes/linux/x64/native/libmongocrypt.so">
+    <Content Include="$(MSBuildThisFileDirectory)../runtimes/linux/native/x64/libmongocrypt.so">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Link>libmongocrypt.so</Link>
     </Content>
