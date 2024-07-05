@@ -70,11 +70,11 @@
     </Content>
     <Content Include="$(LibMongoCryptBinaries)/linux/x64/libmongocrypt.so">
       <Pack>true</Pack>
-      <PackagePath>runtimes/linux-x64/native</PackagePath>
+      <PackagePath>runtimes/linux/native/x64</PackagePath>
     </Content>
     <Content Include="$(LibMongoCryptBinaries)/linux/arm64/libmongocrypt.so">
       <Pack>true</Pack>
-      <PackagePath>runtimes/linux-arm64/native</PackagePath>
+      <PackagePath>runtimes/linux/native/arm64</PackagePath>
     </Content>
     <Content Include="$(LibMongoCryptBinaries)/libmongocrypt.dylib">
       <Pack>true</Pack>
